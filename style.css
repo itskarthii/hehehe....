@@ -1,0 +1,172 @@
+body{
+  margin:0;
+  overflow:hidden;
+  font-family:sans-serif;
+  background:linear-gradient(#020111,#191970);
+  color:white;
+  text-align:center;
+}
+
+#game{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+}
+
+#game div{
+  user-select:none;
+}
+
+.star{
+  position:absolute;
+  font-size:18px;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:0.3} to{opacity:1}
+}
+
+#sceneText{
+  position:absolute;
+  bottom:200px;
+  width:100%;
+  font-size:22px;
+  z-index:20;
+  padding:0 15px;
+  text-shadow:0 0 8px black, 0 0 12px black;
+}
+
+#choices{
+  position:absolute;
+  bottom:100px;
+  width:100%;
+  z-index:20;
+}
+
+button{
+  padding:12px 18px;
+  margin:6px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+  min-width:120px;
+}
+
+.fallingStar{
+  position:absolute;
+  font-size:22px;
+  animation:fall 3s linear forwards;
+  cursor:pointer;
+}
+
+@keyframes fall{
+  from { top:-50px; } to { top:100vh; }
+}
+
+.comet{
+  position:absolute;
+  font-size:40px;
+  z-index:10;
+}
+
+.cometTrail{
+  position:absolute;
+  width:150px;
+  height:20px;
+  background:linear-gradient(to right, #fff, #ffd700, rgba(255,255,255,0));
+  border-radius:50%;
+  filter:blur(8px);
+  z-index:5;
+}
+
+.rock{
+  position:absolute;
+  font-size:30px;
+  cursor:pointer;
+  transition:transform 0.2s;
+}
+
+.rock:hover{
+  transform:scale(1.2);
+}
+
+.glowRock{
+  box-shadow: 0 0 15px #ffd700, 0 0 25px #ffff88;
+}
+
+#mountainBg{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60%;
+  background:linear-gradient(to top,#020111,#191970);
+  clip-path:polygon(
+    0% 100%,10% 75%,20% 85%,30% 65%,40% 80%,50% 60%,60% 78%,70% 68%,80% 85%,90% 70%,100% 100%
+  );
+  z-index:-1;
+}
+
+.firefly{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:yellow;
+  border-radius:50%;
+  opacity:0.6;
+  animation:fireflyTwinkle 2s infinite alternate;
+}
+
+@keyframes fireflyTwinkle{
+  from{opacity:0.2; transform:translateY(0px);} 
+  to{opacity:1; transform:translateY(-5px);}
+}
+
+#fadeScreen{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:black;
+  top:0;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 3s;
+  z-index:1000;
+}
+
+#birthdayMessage{
+  position:absolute;
+  width:100%;
+  top:45%;
+  text-align:center;
+  color:white;
+  font-size:34px;
+  opacity:0;
+  transition:opacity 3s;
+  z-index:1001;
+  text-shadow:0 0 12px white;
+}
+
+@media (max-width:600px){
+  #sceneText{
+    bottom:180px;
+    font-size:18px;
+  }
+
+  #choices{
+    bottom:80px;
+  }
+
+  button{
+    font-size:14px;
+    padding:10px 14px;
+  }
+
+  #birthdayMessage{
+    font-size:24px;
+    padding:0 15px;
+  }
+}
