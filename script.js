@@ -294,8 +294,8 @@ function startCampScene() {
   mountains.style.clipPath = `
     polygon(
       0% 100%, 
-      48% 70%, 
-      38% 85%, 
+      8% 70%, 
+      18% 85%, 
       30% 60%, 
       45% 80%, 
       60% 55%, 
@@ -333,8 +333,8 @@ function startCampScene() {
     moonMsg.style.top = "15%";
     moonMsg.style.width = "100%";
     moonMsg.style.textAlign = "center";
-    moonMsg.style.fontSize = "24px";
-    moonMsg.style.fontFamily = "'Comic Sans MS', sans-serif";
+    moonMsg.style.fontSize = "18px";
+    moonMsg.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     moonMsg.style.color = "#fff";
     moonMsg.style.opacity = "0";
     moonMsg.style.transition = "opacity 4s ease";
@@ -372,8 +372,8 @@ as a night with the moon 🌙<br>`;
     msg.style.top = "25%";
     msg.style.width = "100%";
     msg.style.textAlign = "center";
-    msg.style.fontSize = "24px";
-    msg.style.fontFamily = "'Comic Sans MS', sans-serif";
+    msg.style.fontSize = "18px";
+    msg.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     msg.style.color = "#fff";
     msg.style.opacity = "0";
     msg.style.transition = "opacity 3s";
@@ -434,8 +434,8 @@ as a night with the moon 🌙<br>`;
     let wish = document.createElement("div");
     wish.innerHTML = "Make a wish ✨<br>Blow out the candle by touching it…";
     wish.style.marginBottom = "10px"; // above cake
-    wish.style.fontSize = "24px";
-    wish.style.fontFamily = "'Comic Sans MS',  sans-serif";
+    wish.style.fontSize = "18px";
+    wish.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     wish.style.color = "#fff";
     wish.style.opacity = "0";
     wish.style.transition = "opacity 2s";
@@ -474,8 +474,8 @@ as a night with the moon 🌙<br>`;
           mockery.style.top = "45%"; // slightly higher
           mockery.style.width = "100%";
           mockery.style.textAlign = "center";
-          mockery.style.fontSize = "24px";
-          mockery.style.fontFamily = "'Comic Sans MS', sans-serif";
+          mockery.style.fontSize = "20px";
+          mockery.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
           mockery.style.color = "#fff";
           mockery.style.opacity = "0";
           mockery.style.transition = "opacity 3s";
