@@ -333,7 +333,7 @@ function startCampScene() {
     moonMsg.style.top = "15%";
     moonMsg.style.width = "100%";
     moonMsg.style.textAlign = "center";
-    moonMsg.style.fontSize = "18px";
+    moonMsg.style.fontSize = "22px";
     moonMsg.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     moonMsg.style.color = "#fff";
     moonMsg.style.opacity = "0";
@@ -372,7 +372,7 @@ as a night with the moon 🌙<br>`;
     msg.style.top = "25%";
     msg.style.width = "100%";
     msg.style.textAlign = "center";
-    msg.style.fontSize = "18px";
+    msg.style.fontSize = "22px";
     msg.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     msg.style.color = "#fff";
     msg.style.opacity = "0";
@@ -434,7 +434,7 @@ as a night with the moon 🌙<br>`;
     let wish = document.createElement("div");
     wish.innerHTML = "Make a wish ✨<br>Blow out the candle by touching it…";
     wish.style.marginBottom = "10px"; // above cake
-    wish.style.fontSize = "18px";
+    wish.style.fontSize = "22px";
     wish.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
     wish.style.color = "#fff";
     wish.style.opacity = "0";
@@ -474,7 +474,7 @@ as a night with the moon 🌙<br>`;
           mockery.style.top = "45%"; // slightly higher
           mockery.style.width = "100%";
           mockery.style.textAlign = "center";
-          mockery.style.fontSize = "20px";
+          mockery.style.fontSize = "22px";
           mockery.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
           mockery.style.color = "#fff";
           mockery.style.opacity = "0";
