@@ -145,7 +145,7 @@ function startStarGame() {
         showScene();
       }
     };
-    setTimeout(() => star.remove(), 3000);
+    setTimeout(() => star.remove(), 5000);
   }, 800);
 }
 
