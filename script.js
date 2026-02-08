@@ -488,6 +488,23 @@ as a night with the moon 🌙<br>`;
     );
   }
 }
+// Force audio to unlock on first click anywhere
+document.addEventListener("click", function unlockAudio() {
+  const bgMusic = document.getElementById("bgMusic");
+  const birthdayMusic = document.getElementById("birthdayMusic");
+
+  bgMusic.play().then(() => {
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+  }).catch(() => {});
+
+  birthdayMusic.play().then(() => {
+    birthdayMusic.pause();
+    birthdayMusic.currentTime = 0;
+  }).catch(() => {});
+
+  document.removeEventListener("click", unlockAudio);
+});
 
 createStars();
 showScene();
