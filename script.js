@@ -125,6 +125,12 @@ function showScene() {
 
 /* ------------------ STAR CATCH ------------------ */
 function startStarGame() {
+
+  playStarMusic();   // ← this line added
+
+  document.getElementById("choices").innerHTML = "";
+  caughtStars = 0;
+
   document.getElementById("choices").innerHTML = "";
   caughtStars = 0;
   starInterval = setInterval(() => {
