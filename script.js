@@ -45,8 +45,6 @@ function addChoice(text, next) {
   const btn = document.createElement("button");
   btn.innerText = text;
   btn.onclick = () => {
-    playStarMusic(); // 🎵 play starry theme
-
     if (next === "comet") startCometRide();
     else if (next === "climb") startClimb();
     else if (next === "starGame") startStarRescue();
@@ -123,8 +121,6 @@ function showScene() {
 
 /* ------------------ STAR CATCH ------------------ */
 function startStarGame() {
-  playStarMusic();   // ← this line added
-
   document.getElementById("choices").innerHTML = "";
   caughtStars = 0;
 
@@ -465,44 +461,11 @@ as a night with the moon 🌙<br>`;
         cake.style.opacity = "0";
         wish.style.opacity = "0";
         setTimeout(() => {
-          // Stop all music for final mockery
           let mockery = document.createElement("div");
           mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
           mockery.style.position = "absolute";
-          mockery.style.top = "45%"; // slightly higher
+          mockery.style.top = "45%";
           mockery.style.width = "100%";
           mockery.style.textAlign = "center";
           mockery.style.fontSize = "22px";
-          mockery.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
-          mockery.style.color = "#fff";
-          mockery.style.opacity = "0";
-          mockery.style.transition = "opacity 3s";
-          mockery.style.zIndex = "9";
-          game.appendChild(mockery);
-          setTimeout(() => (mockery.style.opacity = "1"), 500);
-        }, 500);
-      },
-      { once: true }
-    );
-  }
-}
-// Force audio to unlock on first click anywhere
-document.addEventListener("click", function unlockAudio() {
-  const bgMusic = document.getElementById("bgMusic");
-  const birthdayMusic = document.getElementById("birthdayMusic");
-
-  bgMusic.play().then(() => {
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-  }).catch(() => {});
-
-  birthdayMusic.play().then(() => {
-    birthdayMusic.pause();
-    birthdayMusic.currentTime = 0;
-  }).catch(() => {});
-
-  document.removeEventListener("click", unlockAudio);
-});
-
-createStars();
-showScene();
+          mockery.style.fontFamily
