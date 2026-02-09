@@ -263,7 +263,7 @@ function startStarRescue() {
         "🌟 The star shines brilliantly and says: 'Thank you!'";
       setTimeout(() => {
         star.remove();
-        scene = 7;
+    scene = 7;
         showScene();
       }, 3000);
     }
@@ -279,87 +279,6 @@ function startCampScene() {
   text.innerHTML = "";
   choices.innerHTML = "";
 
-  let moon, moonMsg;
-
-  // 🌄 Mountain silhouette
-  let mountains = document.createElement("div");
-  mountains.style.position = "absolute";
-  mountains.style.bottom = "0";
-  mountains.style.width = "100%";
-  mountains.style.height = "40%";
-  mountains.style.background = "#000";
-  mountains.style.clipPath = `
-    polygon(
-      0% 100%, 
-      8% 70%, 
-      18% 85%, 
-      30% 60%, 
-      45% 80%, 
-      60% 55%, 
-      75% 75%, 
-      90% 65%, 
-      100% 100%
-    )
-  `;
-  mountains.style.opacity = "0";
-  mountains.style.transition = "opacity 3s ease";
-  mountains.style.zIndex = "5";
-  game.appendChild(mountains);
-  setTimeout(() => (mountains.style.opacity = "1"), 100);
-
-  // 🌕 Moon rise
-  setTimeout(() => {
-    moon = document.createElement("div");
-    moon.innerText = "🌕";
-    moon.style.position = "absolute";
-    moon.style.top = "8%";
-    moon.style.left = "45%";
-    moon.style.fontSize = "130px";
-    moon.style.opacity = "0";
-    moon.style.transform = "translateY(-180px) scale(0.95)";
-    moon.style.transition =
-      "transform 9s cubic-bezier(0.22,1,0.36,1), filter 9s ease, opacity 5s ease";
-    moon.style.filter = "drop-shadow(0 0 0px white)";
-    moon.style.zIndex = "4";
-    game.appendChild(moon);
-
-    moonMsg = document.createElement("div");
-    moonMsg.innerHTML =
-      "Thanks for helping the lost star! In exchange, I prepared a surprise for you 🌙";
-    moonMsg.style.position = "absolute";
-    moonMsg.style.top = "15%";
-    moonMsg.style.width = "100%";
-    moonMsg.style.textAlign = "center";
-    moonMsg.style.fontSize = "22px";
-    moonMsg.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
-    moonMsg.style.color = "#fff";
-    moonMsg.style.opacity = "0";
-    moonMsg.style.transition = "opacity 4s ease";
-    moonMsg.style.zIndex = "5";
-    game.appendChild(moonMsg);
-
-    requestAnimationFrame(() => {
-      moon.style.opacity = "1";
-      moon.style.transform = "translateY(0) scale(1)";
-      moon.style.filter = "drop-shadow(0 0 60px white)";
-      document.body.style.background =
-        "radial-gradient(circle at top,#1e3c72,#0f2027)";
-    });
-
-    // Show moon message → fade out → birthday message
-    setTimeout(() => {
-      moonMsg.style.opacity = "1"; // fade in
-      setTimeout(() => {
-        moonMsg.style.opacity = "0"; // fade out
-        setTimeout(() => {
-          moon.style.opacity = "0"; // fade moon
-          showBirthdayMsg();
-        }, 1200);
-      }, 6000); // visible for 6s
-    }, 10000); // after moon rise
-  }, 100);
-
-  // ------------------ Birthday Message ------------------
   function showBirthdayMsg() {
     let msg = document.createElement("div");
     msg.innerHTML = `Happiest bdy wishes annammeee... ❤️✨<br>
@@ -379,12 +298,10 @@ as a night with the moon 🌙<br>`;
 
     setTimeout(() => (msg.style.opacity = "1"), 100);
 
-    // 🎵 Play birthday music when message shows
     setTimeout(() => {
       playBirthdayMusic();
     }, 100);
 
-    // One click → fade birthday msg → cake scene
     msg.addEventListener(
       "click",
       function proceed() {
@@ -399,73 +316,47 @@ as a night with the moon 🌙<br>`;
     );
   }
 
-  // ------------------ Cake Scene ------------------
   function showCakeScene() {
-    // ☄️ Comet
-    let comet = document.createElement("div");
-    comet.innerText = "☄️";
-    comet.style.position = "absolute";
-    comet.style.top = "-50px";
-    comet.style.left = "70%";
-    comet.style.fontSize = "40px";
-    comet.style.opacity = "0.6";
-    comet.style.transition = "transform 4s linear, opacity 4s";
-    comet.style.zIndex = "2";
-    game.appendChild(comet);
-    requestAnimationFrame(() => {
-      comet.style.transform = "translate(-300px,500px)";
-      comet.style.opacity = "0";
-    });
-
-    // Cake container
     let cakeContainer = document.createElement("div");
     cakeContainer.style.position = "absolute";
     cakeContainer.style.top = "50%";
     cakeContainer.style.left = "50%";
-    cakeContainer.style.transform = "translate(-50%, -50%)"; // center
+    cakeContainer.style.transform = "translate(-50%, -50%)";
     cakeContainer.style.textAlign = "center";
     cakeContainer.style.zIndex = "7";
     game.appendChild(cakeContainer);
 
-    // Instruction above cake
-    let wish = document.createElement("div");
-    wish.innerHTML = "Make a wish ✨<br>Blow out the candle by touching it…";
-    wish.style.marginBottom = "10px"; // above cake
-    wish.style.fontSize = "22px";
-    wish.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
-    wish.style.color = "#fff";
-    wish.style.opacity = "0";
-    wish.style.transition = "opacity 2s";
-    wish.style.zIndex = "8";
-    cakeContainer.appendChild(wish);
-
-    // Cake emoji (tap on it to blow candle)
     let cake = document.createElement("div");
     cake.innerHTML = "🎂";
-    cake.style.fontSize = "180px"; // bigger cake
-    cake.style.opacity = "0";
-    cake.style.transition = "opacity 2s";
+    cake.style.fontSize = "180px";
     cake.style.cursor = "pointer";
-    cake.style.marginTop = "10px"; // below instruction
     cakeContainer.appendChild(cake);
 
-    setTimeout(() => {
-      cake.style.opacity = "1";
-      wish.style.opacity = "1";
-    }, 200);
+    cake.addEventListener("click", () => {
+      cake.remove();
 
-    // Tap cake → blow out → fade cake → show mockery
-    cake.addEventListener(
-      "click",
-      () => {
-        cake.style.opacity = "0";
-        wish.style.opacity = "0";
-        setTimeout(() => {
-          let mockery = document.createElement("div");
-          mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
-          mockery.style.position = "absolute";
-          mockery.style.top = "45%";
-          mockery.style.width = "100%";
-          mockery.style.textAlign = "center";
-          mockery.style.fontSize = "22px";
-          mockery.style.fontFamily
+      let mockery = document.createElement("div");
+      mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
+      mockery.style.position = "absolute";
+      mockery.style.top = "45%";
+      mockery.style.width = "100%";
+      mockery.style.textAlign = "center";
+      mockery.style.fontSize = "22px";
+      mockery.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+      mockery.style.color = "#fff";
+      mockery.style.opacity = "0";
+      mockery.style.transition = "opacity 2s";
+      mockery.style.zIndex = "9";
+      game.appendChild(mockery);
+
+      setTimeout(() => {
+        mockery.style.opacity = "1";
+      }, 100);
+    });
+  }
+
+  showBirthdayMsg();
+}
+
+createStars();
+showScene();
