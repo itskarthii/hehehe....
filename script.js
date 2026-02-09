@@ -221,7 +221,11 @@ function spawnRocks() {
     rock.style.fontSize = "35px";
     rock.style.opacity = "0.7";
 
-    if (i === correct) rock.classList.add("glowRock");
+    if (i === correct) 
+      {
+        document.getElementById("sceneText").innerHTML =
+          "Good job..!";
+      }
 
     rock.onclick = () => {
       if (i === correct) {
