@@ -174,6 +174,7 @@ function startCometRide() {
 
   const start = performance.now();
   const duration = 3000;
+  trail.style.transform = `rotate(${progress * 720}deg)`;
 
   function animate(timestamp) {
     const progress = (timestamp - start) / duration;
@@ -262,12 +263,12 @@ function startStarRescue() {
 
   star.onclick = () => {
     energy++;
-    if (energy > 5) energy = 5;
+    if (energy > 8) energy = 8;
 
     star.style.opacity = 0.3 + energy * 0.12;
     star.style.transform = `scale(${1 + energy * 0.1})`;
 
-    if (energy >= 5) {
+    if (energy >= 8) {
       sceneText.innerHTML =
         "🌟 The star shines brilliantly and says: 'Thank you!'";
       setTimeout(() => {
