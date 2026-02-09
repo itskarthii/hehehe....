@@ -109,9 +109,7 @@ function showScene() {
     const shimmerInterval = setInterval(() => {
       stars.forEach(s => {
         s.style.transform = `scale(${1 + Math.random() * 0.2})`;
-        s.style.textShadow = `0 0 ${5 + Math.random() * 10}px #fff, 0 0 ${
-          5 + Math.random() * 5
-        }px #ffd700`;
+        s.style.textShadow = `0 0 ${5 + Math.random() * 10}px #fff, 0 0 ${5 + Math.random() * 5}px #ffd700`;
       });
       shimmerCount++;
       if (shimmerCount > 12) clearInterval(shimmerInterval);
@@ -125,14 +123,11 @@ function showScene() {
 
 /* ------------------ STAR CATCH ------------------ */
 function startStarGame() {
-
   playStarMusic();   // ← this line added
 
   document.getElementById("choices").innerHTML = "";
   caughtStars = 0;
 
-  document.getElementById("choices").innerHTML = "";
-  caughtStars = 0;
   starInterval = setInterval(() => {
     let star = document.createElement("div");
     star.className = "fallingStar";
@@ -174,7 +169,6 @@ function startCometRide() {
 
   const start = performance.now();
   const duration = 3000;
-  trail.style.transform = `rotate(${progress * 720}deg)`;
 
   function animate(timestamp) {
     const progress = (timestamp - start) / duration;
@@ -472,8 +466,6 @@ as a night with the moon 🌙<br>`;
         wish.style.opacity = "0";
         setTimeout(() => {
           // Stop all music for final mockery
-         
-
           let mockery = document.createElement("div");
           mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
           mockery.style.position = "absolute";
