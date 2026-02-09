@@ -471,8 +471,7 @@ as a night with the moon 🌙<br>`;
         wish.style.opacity = "0";
         setTimeout(() => {
           // Stop all music for final mockery
-          document.getElementById("bgMusic").pause();
-          document.getElementById("birthdayMusic").pause();
+         
 
           let mockery = document.createElement("div");
           mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
