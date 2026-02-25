@@ -467,7 +467,7 @@ as a night with the moon 🌙<br>`;
         setTimeout(() => {
           // Stop all music for final mockery
           let mockery = document.createElement("div");
-          mockery.innerHTML = `surprise engane kollavo , hehehe... 😁<br>pinna 20 vayass kelavi aayi... 👵`;
+          mockery.innerHTML = `nee pinnem vannu nokkum nnu ariyam so... ,... 😁<br>pinna njan next bdy kk oru proper surprise thannola ithe pole thattikoott alland ,hehehe`;
           mockery.style.position = "absolute";
           mockery.style.top = "45%"; // slightly higher
           mockery.style.width = "100%";
